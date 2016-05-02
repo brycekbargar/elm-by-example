@@ -14,7 +14,7 @@ fibonacci n =
         fibonacci' n 0 1 [] |> reverse 
 
 
-fibonacciWithIndexes : Int -> List (Int, Int)
-fibonacciWithIndexes n = 
+fibonacciWithIndices : Int -> List (Int, Int)
+fibonacciWithIndices n = 
     fibonacci n |> map2 (,) [0..n]
     
