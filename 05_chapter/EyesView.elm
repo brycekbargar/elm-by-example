@@ -4,10 +4,7 @@ module EyesView where
 import Color exposing (Color, black, white)
 import Graphics.Collage exposing (Form, collage, oval, filled, group, move, moveX)
 import Graphics.Element exposing (Element)
-
-
-type alias Size = (Int, Int)
-type alias Location = (Float, Float)
+import EyesModel exposing (Size, PupilLocation)
 
 
 coloredOval : Color -> Float -> Float -> Form
@@ -27,7 +24,7 @@ pupil : Float -> Float -> Form
 pupil w h = coloredOval black (w/5) (h/5)
 
 
-eyesView : Size -> Location -> Location -> Element
+eyesView : Size -> PupilLocation -> PupilLocation -> Element
 eyesView (w, h) l r = 
     let 
         eyeWidth = (toFloat w) / 2
