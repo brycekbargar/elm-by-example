@@ -2,7 +2,7 @@ module EyesModel where
 
 
 type alias Size = (Int, Int)
-type alias MouseLocation = (Int, Int)
+type alias MousePosition = (Int, Int)
 type alias PupilLocation = (Float, Float)
 
 
@@ -21,7 +21,8 @@ calculateP (xR, yR) (xC, yC) (xM, yM) =
         (xP,yP)
 
 
-leftPupil : Size  -> MouseLocation -> PupilLocation
+-- if I could math I would pull out the common code here...
+leftPupil : Size  -> MousePosition -> PupilLocation
 leftPupil (w, h) (x, y) =
   let xC = (toFloat w)/4
       yC = (toFloat h)/2
@@ -40,7 +41,7 @@ leftPupil (w, h) (x, y) =
       (xPl,yPl)
 
 
-rightPupil : Size  -> MouseLocation -> PupilLocation
+rightPupil : Size  -> MousePosition -> PupilLocation
 rightPupil (w, h) (x, y) =
   let xC = (toFloat w)/4
       yC = (toFloat h)/2
